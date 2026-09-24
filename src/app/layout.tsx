@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import ScrollNavigator from "@/components/ScrollNavigator";
+import PageTransition from "@/components/PageTransition";
 import { ThemeProvider } from "@/components/ThemeProvider";
 import "./globals.css";
 
@@ -21,9 +22,9 @@ export default function RootLayout({
         <ThemeProvider attribute="class" defaultTheme="dark" enableSystem={false}>
           <ScrollNavigator />
           <Navbar />
-          <div className="flex-1">
+          <PageTransition>
             {children}
-          </div>
+          </PageTransition>
           <Footer />
         </ThemeProvider>
       </body>
